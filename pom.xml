@@ -13,6 +13,7 @@
         <module>chapter1</module>
         <module>chapter2</module>
         <module>wfk</module>
+        <module>proxy</module>
     </modules>
 
     <properties>
