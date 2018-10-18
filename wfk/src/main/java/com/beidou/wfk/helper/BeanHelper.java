@@ -36,7 +36,7 @@ public final class BeanHelper {
     @SuppressWarnings("unchecked")
     public static <T> T getBean(Class<T> cls) {
         if (!BEAN_MAP.containsKey(cls)) {
-            throw new RuntimeException("can not get com.beidou.wfk.bean by class: " + cls);
+            throw new RuntimeException("can not get bean by class: " + cls);
         }
         return (T) BEAN_MAP.get(cls);
     }

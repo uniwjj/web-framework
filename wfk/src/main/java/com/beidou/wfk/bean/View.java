@@ -26,11 +26,11 @@ public class View {
 
     public View(String path) {
         this.path = path;
-        model = Maps.newHashMap();
+        this.model = Maps.newHashMap();
     }
 
     public View addModel(String key, Object value) {
-        model.put(key, value);
+        this.model.put(key, value);
         return this;
     }
 }

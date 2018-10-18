@@ -8,7 +8,6 @@ import com.beidou.wfk.bean.View;
 import com.beidou.wfk.helper.*;
 import com.beidou.wfk.util.ReflectionUtil;
 import org.apache.commons.lang3.StringUtils;
-
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

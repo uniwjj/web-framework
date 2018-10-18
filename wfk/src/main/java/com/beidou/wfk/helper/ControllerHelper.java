@@ -25,21 +25,23 @@ public final class ControllerHelper {
         if (CollectionUtils.isNotEmpty(controllerClassSet)) {
             for (Class<?> controllerClass : controllerClassSet) {
                 Method[] methods = controllerClass.getDeclaredMethods();
-                if (ArrayUtils.isNotEmpty(methods)) {
-                    for (Method method : methods) {
-                        if (method.isAnnotationPresent(Action.class)) {
-                            Action action = method.getAnnotation(Action.class);
-                            String mapping = action.value();
-                            if (mapping.matches("\\w+:/\\w*")) {
-                                String[] array = mapping.split(":");
-                                if (ArrayUtils.isNotEmpty(array) && array.length == 2) {
-                                    String requestMethod = array[0];
-                                    String requestPath = array[1];
-                                    Request request = new Request(requestMethod, requestPath);
-                                    Handler handler = new Handler(controllerClass, method);
-                                    ACTION_MAP.put(request, handler);
-                                }
-                            }
+                if (ArrayUtils.isEmpty(methods)) {
+                    continue;
+                }
+                for (Method method : methods) {
+                    if (!method.isAnnotationPresent(Action.class)) {
+                        continue;
+                    }
+                    Action action = method.getAnnotation(Action.class);
+                    String mapping = action.value();
+                    if (mapping.matches("\\w+:/\\w*")) {
+                        String[] array = mapping.split(":");
+                        if (ArrayUtils.isNotEmpty(array) && array.length == 2) {
+                            String requestMethod = array[0];
+                            String requestPath = array[1];
+                            Request request = new Request(requestMethod, requestPath);
+                            Handler handler = new Handler(controllerClass, method);
+                            ACTION_MAP.put(request, handler);
                         }
                     }
                 }

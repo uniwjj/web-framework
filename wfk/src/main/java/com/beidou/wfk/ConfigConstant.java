@@ -10,13 +10,13 @@ public class ConfigConstant {
     /**
      * 属性配置文件
      */
-    public static final String CONFIG_FILE = "wfk..properties";
+    public static final String CONFIG_FILE = "wfk.properties";
 
     /**
      * 数据库驱动
      */
     public static final String JDBC_DRIVER = "wfk.jdbc.driver";
-    public static final String JDBC_URL = "jwfk.dbc.url";
+    public static final String JDBC_URL = "jwfk.jdbc.url";
     public static final String JDBC_USERNAME = "wfk.jdbc.username";
     public static final String JDBC_PASSWORD = "wfk.jdbc.password";
 

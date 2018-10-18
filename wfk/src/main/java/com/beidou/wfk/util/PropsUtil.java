@@ -14,7 +14,6 @@ import java.util.Properties;
  */
 @Slf4j
 public final class PropsUtil {
-
     /**
      * 加载属性文件
      */
